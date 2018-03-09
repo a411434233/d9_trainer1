@@ -33,6 +33,7 @@ Page({
 		    	filePath: tempFilePaths[0],
 		    	name: 'avatar_temp',
 		    	success: function(res){
+            console.log(res)
 		    		var resDate = JSON.parse(res.data);
 		            if (resDate.retCode != '0') {
 		              wx.showToast({
@@ -44,7 +45,7 @@ Page({
 		            }
 			        var data = resDate.data;
 			        that.setData({
-				    	image:tempFilePaths,
+                image: data,
 				    	isUpload:true,
 				    	serverImgUrl:data
 				    })
