@@ -1,0 +1,9 @@
+<view class="container">
+    <image src="../../images/success.png" mode="widthFix" style="margin:auto;width:120px;margin-top:55px;" />
+    <view class="tipTxt">提交成功</view>
+    <view class="info">一个工作日内会有工作人员与您联系</view>
+    <view class="back" bindtap="backIndex">返回首页</view>
+    <text class="date">4月15日，首店启航！</text>
+    <image src="../../images/bg.png" mode="widthFix" style="position:fixed;width:100%;display:block;height:auto;top:0px;z-index:-1111;">
+    </image>
+</view>

@@ -1,0 +1,8 @@
+<view class="container">
+    <image src="../../images/success.png" mode="widthFix" style="margin:auto;width:120px;margin-top:55px;" />
+    <view class="tipTxt">申请成功</view>
+    <view class="info">您的照片我们会保密处理，并由CEO亲自审核，静候佳音</view>
+    <view class="back" bindtap="backIndex">返回首页</view>
+    <image src="../../images/bg.png" mode="widthFix" style="position:fixed;width:100%;display:block;height:auto;top:0px;z-index:-1111;">
+    </image>
+</view>

@@ -1,0 +1,19 @@
+<view class="container">
+    <image src="../../images/bg.png" mode="widthFix" style="position:relative;width:100%;display:block;height:auto">
+    	<view class="shadowBox"></view>
+    	<view class="box">
+    		<view class="inputBox" style="border-bottom:1px solid rgba(229,229,229,0.2);">
+    			<text>姓名</text>
+    			<input focus="{{nameFocus}}" placeholder="填写姓名" bindinput="bindNameInput"/>
+    		</view>
+    		<view class="inputBox">
+    			<text>手机</text>
+    			<input focus="{{mobileFocus}}" type="number" maxlength="11" placeholder="输入手机号" bindinput="bindMobileInput"/>
+    		</view>
+    		<view class="info">预售期间递交资料的客户会享受大幅度优惠与特权，D9不忽悠</view>
+    		<view class="appointment" bindtap="apply">
+    			确定提交
+    		</view>
+    	</view>
+    </image>
+</view>
