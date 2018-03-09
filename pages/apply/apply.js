@@ -25,7 +25,7 @@ Page({
 		wx.chooseImage({
 		  count: 1, // 默认9
 		  sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-		  sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+		  sourceType: ['camera'], // 可以指定来源是相册还是相机，默认二者都有
 		  success: function (res) {
 		    var tempFilePaths = res.tempFilePaths;
 		    wx.uploadFile({ 
@@ -87,13 +87,14 @@ Page({
 	      return
 	    }
 	   	 wx.request({
-          url: app.apiServerURL + "/user/updateUserInfo.htm",
+          url: app.apiServerURL + "/user/apply.htm",
           data: {
             version: app.version,
             accessToken: wx.getStorageSync("accessToken"),
             mobileNo:this.data.mobile,
             name:this.data.name,
-            avatar:this.data.serverImgUrl
+            avatar:this.data.serverImgUrl,
+            type:"apply"
           },
           success: function (res) {
             console.log(res.data)

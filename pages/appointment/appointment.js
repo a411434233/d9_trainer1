@@ -44,12 +44,13 @@ Page({
       return
     }
 		wx.request({
-          url: app.apiServerURL + "/user/updateUserInfo.htm",
+          url: app.apiServerURL + "/user/apply.htm",
           data: {
             version: app.version,
             accessToken: wx.getStorageSync("accessToken"),
             mobileNo:this.data.mobile,
-            name:this.data.name
+            name:this.data.name,
+            type:"appointment"
           },
           success: function (res) {
             console.log(res.data)

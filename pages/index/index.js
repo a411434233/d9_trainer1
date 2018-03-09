@@ -4,18 +4,34 @@ Page({
   onShareAppMessage: function (res) {
   },
   data: {
-     user: {}
+     user: {},
+     apply:false,
+     appointment:false
   },   
   //事件处理函数
   apply: function() {
-    wx.navigateTo({
-      url: '../apply/apply'
-    })
+    var apply = this.data.apply;
+    if(apply){
+      wx.navigateTo({
+        url: '../index/success'
+      })
+    }else{
+      wx.navigateTo({
+        url: '../apply/apply'
+      })
+    }
   },
   appointment:function(){
-    wx.navigateTo({
-      url: '../appointment/appointment'
-    })
+    var appointment = this.data.appointment;
+    if(appointment){
+      wx.navigateTo({
+        url: '../index/success'
+      })
+    }else{
+     wx.navigateTo({
+        url: '../appointment/appointment'
+      })
+    }  
   },
   onLoad: function () {
     var that = this;
@@ -27,7 +43,7 @@ Page({
           url: app.apiServerURL + "/user/wechatXcxLogin.htm",
           data: {
             version: app.version,
-            "code": res.code
+            code: res.code
           },
           success: function (res) {
             console.log(res.data)
@@ -39,7 +55,9 @@ Page({
             var accessToken = user.accessToken;
             wx.setStorageSync('accessToken', accessToken);
             that.setData({
-              user: user
+              user: user,
+              apply:res.data.data.apply,
+              appointment:res.data.data.appointment
             })
             app.requestAndUpdateUserInfo();
           }
