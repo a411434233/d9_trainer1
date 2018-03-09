@@ -18,5 +18,5 @@
 		<view style="width:100%;height:40px"></view>
 	</view>
 	<view class="shadowBox"></view>
-	<image src="../../images/bg.png" mode="widthFix" style="position:fixed;width:100%;display:block;height:auto;top:0px;z-index:1" fixed="true"/>
+	<image src="../../images/bg.png" mode="widthFix" style="position:fixed;width:100%;display:block;height:auto;top:0px;z-index:1"/>
 </view>    
