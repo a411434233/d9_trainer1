@@ -1,21 +1,7 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+page { -webkit-user-select:none; user-select:none; width:100%; overflow:hidden; height:100%; }
+.container {width:100%; height:100%;position:relative; }
+.logo{position:absolute;top:50px;width:181px;left:50%;margin-left:-90px;}
+.btn{position:absolute;top:291px;width:199px;left:50%;margin-left:-100px;}
+.date{position:absolute;font-size: 14px;color: #FFFFFF;width:100%;text-align:center;bottom:22%}
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-}

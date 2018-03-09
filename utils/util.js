@@ -13,7 +13,34 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+function errorMsg(that, data) {
+  var text;
+  if (typeof data == 'string') {
+    text = data;
+  } else if (typeof data == 'object') {
+    text = data.data.errorMsg;
+    if (data.data.retCode == '10002') {
+      wx.removeStorageSync("accessToken")
+    }
+  }
+  var errorMsg = {
+    flag: false,
+    text: text
+  }
+  that.setData({
+    errorMsg: errorMsg
+  })
+  setTimeout(function () {
+    var errorMsg = {
+      flag: true
+    }
+    that.setData({
+      errorMsg: errorMsg
+    })
+  }, 2000)
+}
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  errorMsg:errorMsg
 }
