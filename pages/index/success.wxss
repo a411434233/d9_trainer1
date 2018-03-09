@@ -1,0 +1,6 @@
+page { -webkit-user-select:none; user-select:none; width:100%; overflow:hidden; height:100%; }
+.container {width:100%; height:100%;position:relative;text-align:center}
+.tipTxt{font-size: 20px; color: #FFFFFF; text-align: center;margin-top:10px;width:100%;}
+.info{width:205px;margin:auto;margin-top:15px;opacity: 0.6;font-size: 14px;color: #FFFFFF;text-align: center;}
+.date{position:absolute;z-index:11;font-size: 14px;color: #FFFFFF;width:100%;text-align:center;bottom:22%;left:0px;}
+.back{width:335px;height:46px;line-height:46px;margin:auto;margin-top:30px;background:#fff;font-size: 14px; color: #333333; letter-spacing: 0; text-align: center;}

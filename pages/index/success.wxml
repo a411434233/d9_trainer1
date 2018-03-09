@@ -1,0 +1,7 @@
+<view class="container">
+    <image src="../../images/success.png" mode="widthFix" style="margin:auto;width:120px;margin-top:55px;" />
+    <view class="info">您已提交过申请</view>
+    <view class="back" bindtap="backIndex">返回首页</view>
+    <image src="../../images/bg.png" mode="widthFix" style="position:fixed;width:100%;display:block;height:auto;top:0px;z-index:-1111;">
+    </image>
+</view>
