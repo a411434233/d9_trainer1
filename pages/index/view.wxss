@@ -1,0 +1,3 @@
+.view0,.view3,.view6,.view9,.view12{width:100%;clear:both}
+.view1,.view2,.view4,.view5,.view7,.view8,.view10,.view11,.view13,.view14{width:50%;float:left;}
+image{width:100%;display:block;}

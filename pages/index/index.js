@@ -33,6 +33,11 @@ Page({
       })
     }  
   },
+  view:function(){
+    wx.navigateTo({
+      url: '../index/view'
+    })
+  },
   onLoad: function () {
     var that = this;
     wx.login({

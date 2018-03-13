@@ -4,6 +4,7 @@
       <image src="../../images/logo_icon.png" class="logo" mode="widthFix" />
       <image bindtap="apply"  src="../../images/btn_apply.png" class="btn apply" mode="widthFix" />
       <image bindtap="appointment" src="../../images/btn_appointment.png" style="top:351px" class="btn" mode="widthFix" />
+      <view class="viewPic" bindtap="view">场馆图片</view>
       <text class="date">4月15日，首店启航！</text>
     </image>
 </view>

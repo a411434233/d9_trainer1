@@ -1,0 +1,5 @@
+<view class='imgItem' wx:for="{{goodsPictureList}}" wx:for-item="dImg" wx:key="key">
+	<view class="view{{index}}">
+	<image bindtap="imgZoom" data-id="{{index}}" data-list="{{goodsPictureList}}" data-src="{{dImg}}" src="{{dImg}}" mode="widthFix"></image>
+	</view>
+</view>	

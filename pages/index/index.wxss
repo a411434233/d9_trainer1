@@ -4,4 +4,4 @@ page { -webkit-user-select:none; user-select:none; width:100%; overflow:hidden; 
 .logo{position:absolute;top:50px;width:181px;left:50%;margin-left:-90px;}
 .btn{position:absolute;top:291px;width:199px;left:50%;margin-left:-100px;}
 .date{position:absolute;font-size: 14px;color: #FFFFFF;width:100%;text-align:center;bottom:22%}
-
+.viewPic{position:absolute;top:410px;height:40px;line-height:40px;width:199px;left:50%;margin-left:-100px;background:#fff;text-align:center;font-size:14px;color:#333;border-radius:3px;}

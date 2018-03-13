@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/index/view",
     "pages/index/success",
     "pages/apply/apply",
     "pages/apply/applySuccess",
