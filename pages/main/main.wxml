@@ -1,0 +1,17 @@
+<scroll-view scroll-y="" style="height:100%" scroll-with-animation="true" enable-back-to-top="" scroll-into-view="{{curView}}">
+	<view class="main">
+		<view class="title {{curView}}" id="card">办卡</view>
+		<view class="cardBox">
+		</view>
+	</view>
+</scroll-view>
+<view class="righeNav">
+	<view class="tit">
+		<view class="">办卡</view>
+		<view class="lineBox">
+			<view class="scale"></view>
+			<view class="scale"></view>
+			<view class="scale"></view>
+		</view>
+	</view>
+</view>
