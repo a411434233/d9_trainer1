@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/main/main",
     "pages/index/view",
     "pages/index/success",
     "pages/apply/apply",
@@ -8,11 +9,11 @@
     "pages/appointment/appointment",
     "pages/appointment/appointmentSuccess"
   ],
-  "enablePullDownRefresh": true,
+  "enablePullDownRefresh": false,
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "D-9健身",
+    "navigationBarTitleText": "D-NINE",
     "navigationBarTextStyle":"black"
   }
 }
