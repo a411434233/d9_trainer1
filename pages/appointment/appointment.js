@@ -32,7 +32,7 @@ Page({
       })
       return
     }
-    if(that.data.name==""||that.data.name==undefined){
+    if(that.data.mobile==""||that.data.mobile==undefined){
       wx.showToast({
         title: '请输入号码',
         icon: 'none',

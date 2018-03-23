@@ -1,17 +1,189 @@
-<scroll-view scroll-y="" style="height:100%" scroll-with-animation="true" enable-back-to-top="" scroll-into-view="{{curView}}">
+<scroll-view scroll-y scroll-into-view="{{curView}}" scroll-with-animation="true" class="scr" style="height:100%">
 	<view class="main">
-		<view class="title {{curView}}" id="card">办卡</view>
+		<view class="title" id="card">办卡</view>
 		<view class="cardBox">
+			<image class="img year" src="../../images/index_card_year.png" mode="widthFix" bindtap="cardDetail" data-id="year">
+				<view class="bottom"></view>
+			</image>
+			<image class="img month" src="../../images/index_card_month.png" mode="widthFix" bindtap="cardDetail" data-id="month">
+				<view class="bottom"></view>
+			</image>
+			<image class="img season" src="../../images/index_card_season.png" mode="widthFix" bindtap="cardDetail" data-id="season">
+				<view class="bottom"></view>
+			</image>
+			<image class="img all" src="../../images/index_card_all.png" mode="widthFix" bindtap="cardDetail" data-id="all">
+				<view class="bottom"></view>
+			</image>
+			<text class="sales">10月1日开售,终身卡限购500名</text>
+			<text class="limit">*活动日期仅限2018.02.01 至 04.30</text>
+		</view>
+		<view class="title" id="personalTraining">私教</view>
+		<image class="personalTrainingBox" src="../../images/personalTraining.png" mode="widthFix">
+			<image class="lesson" mode="widthFix" src="../../images/lesson.png"/>
+		</image>
+		<block wx:if="{{lessonList}}">
+		<view class="title" id="lesson">本日操课</view>
+		<view class="listBox" wx:for="{{lessonList}}" wx:key="key" wx:for-item="item" wx:for-index="index">
+			<image src="{{item.banner}}">
+				<view class="info"></view>
+				<view class="address"></view>
+				<view class="detail">
+					<view>
+					</view>
+					<view class="">立即预约</view>
+				</view>
+			</image>
+		</view>
+		<view class="viewLesson">查看本周课程</view>
+		</block>
+		<view class="title" id="activity">活动</view>
+		<image class="activity" src="../../images/personalTraining.png" mode="widthFix">
+			<view class="time">
+				活动日期仅限2018.02.01 至 04.30
+			</view>
+		</image>
+		<view class="title" id="venues">场馆介绍</view>
+		<image bindtap="viewIntro" class="venues" src="../../images/venues.png" mode="widthFix">
+		</image>
+		<view class="my" id="my">我的</view>
+		<view class="mybox">
+			<view class="userInfo">
+				<image src="../../images/user_bg.png" mode="widthFix" class="userBg">
+					<image src="https://wx.qlogo.cn/mmopen/vi_32/7wNO8Y5CibxYwG1HqqlwkY46zHicA7WHjVej6D8nKEd6zNOR1ic0re2kzdYW8CQMXZicv99V68FfLIna5QIucNt38Q/132" mode="widthFix" class="avatar" />
+					<view class="name">Sivan</view>
+				</image>
+			</view>
+			<view class="rights">
+				<view class="userOwn">
+					<view class="lists">
+						<image src="../../images/icon_vip.png" mode="widthFix" class="avatar" />
+						<view class="name">健身会员</view>
+						<view class="txt">未购买</view>
+					</view>
+					<view class="lists">
+						<image src="../../images/icon_personalTraining.png" mode="widthFix" class="avatar" />
+						<view class="name">私教</view>
+						<view class="txt">未购买</view>
+					</view>
+					<view class="lists">
+						<image src="../../images/icon_lesson.png" mode="widthFix" class="avatar" />
+						<view class="name">团体课</view>
+						<view class="txt">未购买</view>
+					</view>
+				</view>
+				<view class="allRights">全部权益</view>
+			</view>
+			<view class="navLists">
+				<view class="nav">
+					<view class="name">课程</view>
+					<view class="arrow"></view>
+				</view>
+				<view class="nav">
+					<view class="name">订单</view>
+					<view class="arrow"></view>
+				</view>
+				<view class="nav">
+					<view class="name">联系客服</view>
+					<view class="arrow"></view>
+				</view>
+				<view class="nav">
+					<view class="name">我要合作</view>
+					<view class="arrow"></view>
+				</view>
+				<view class="nav">
+					<view class="name">设置</view>
+					<view class="arrow"></view>
+				</view>
+			</view>
 		</view>
 	</view>
 </scroll-view>
 <view class="righeNav">
-	<view class="tit">
-		<view class="">办卡</view>
+	<view class="titBox boxCard_{{tabView}}">
+		<view class="tit" bindtap="jump" data-id="card">办卡</view>
 		<view class="lineBox">
-			<view class="scale"></view>
-			<view class="scale"></view>
-			<view class="scale"></view>
+			<view class="scale" style="width:27px"></view>
+			<view class="scale" style="width:26px"></view>
+			<view class="scale" style="width:36px"></view>
 		</view>
+	</view>
+	<view class="lineBox">
+		<view class="scale" style="width:14px"></view>
+		<view class="scale" style="width:17px"></view>
+		<view class="scale" style="width:19px"></view>
+		<view class="scale" style="width:14px"></view>
+	</view>
+	<view class="titBox  personal_{{tabView}}">
+		<view class="tit"  bindtap="jump" data-id="personalTraining">私教</view>
+		<view class="lineBox">
+			<view class="scale" style="width:27px"></view>
+			<view class="scale" style="width:26px"></view>
+			<view class="scale" style="width:36px"></view>
+		</view>
+	</view>
+	<view class="lineBox">
+		<view class="scale" style="width:17px"></view>
+		<view class="scale" style="width:18px"></view>
+		<view class="scale" style="width:19px"></view>
+		<view class="scale" style="width:23px"></view>
+	</view>
+	<view class="titBox  lesson_{{tabView}}">
+		<view class="tit" bindtap="jump" data-id="lesson">课程</view>
+		<view class="lineBox">
+			<view class="scale" style="width:27px"></view>
+			<view class="scale" style="width:26px"></view>
+			<view class="scale" style="width:36px"></view>
+		</view>
+	</view>
+	<view class="lineBox">
+		<view class="scale" style="width:26px"></view>
+		<view class="scale" style="width:34px"></view>
+		<view class="scale" style="width:42px"></view>
+		<view class="scale" style="width:21px"></view>
+	</view>
+	<view class="titBox  activity_{{tabView}}">
+		<view class="tit" bindtap="jump" data-id="activity">活动</view>
+		<view class="lineBox">
+			<view class="scale" style="width:27px"></view>
+			<view class="scale" style="width:26px"></view>
+			<view class="scale" style="width:36px"></view>
+		</view>
+	</view>
+	<view class="lineBox">
+		<view class="scale" style="width:21px"></view>
+		<view class="scale" style="width:29px"></view>
+		<view class="scale" style="width:15px"></view>
+		<view class="scale" style="width:17px"></view>
+	</view>
+	<view class="titBox  venues_{{tabView}}">
+		<view class="tit"  bindtap="jump" data-id="venues">场馆</view>
+		<view class="lineBox">
+			<view class="scale" style="width:27px"></view>
+			<view class="scale" style="width:26px"></view>
+			<view class="scale" style="width:36px"></view>
+		</view>
+	</view>
+	<view class="lineBox">
+		<view class="scale" style="width:18px"></view>
+		<view class="scale" style="width:20px"></view>
+		<view class="scale" style="width:18px"></view>
+		<view class="scale" style="width:16px"></view>
+	</view>
+	<view class="titBox  my_{{tabView}}">
+		<view class="tit"  bindtap="jump" data-id="my">我的</view>
+		<view class="lineBox">
+			<view class="scale" style="width:27px"></view>
+			<view class="scale" style="width:26px"></view>
+			<view class="scale" style="width:36px"></view>
+		</view>
+	</view>
+	<view class="lineBox">
+		<view class="scale" style="width:25px"></view>
+		<view class="scale" style="width:22px"></view>
+		<view class="scale" style="width:22px"></view>
+		<view class="scale" style="width:20px"></view>
+		<view class="scale" style="width:18px"></view>
+		<view class="scale" style="width:16px"></view>
+		<view class="scale" style="width:20px"></view>
 	</view>
 </view>
