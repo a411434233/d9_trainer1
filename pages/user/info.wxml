@@ -1,0 +1,26 @@
+<view class="contaierBox">
+	<view class="avatarBox">
+		<image src="https://wx.qlogo.cn/mmopen/vi_32/7wNO8Y5CibxYwG1HqqlwkY46zHicA7WHjVej6D8nKEd6zNOR1ic0re2kzdYW8CQMXZicv99V68FfLIna5QIucNt38Q/132" mode="widthFix" class="avatar" />
+		<view class="changeAvatar">设置头像<view class="arrow"></view></view>
+	</view>
+	<view class="field">
+		<view class="label">昵称</view>
+		<input type="text" placeholder-class="placeholder" placeholder="请输入昵称" maxlength="20"/>
+	</view>
+	<view class="field">
+		<view class="label">性别</view>
+		<view class="choseBox">
+			<view class="gender"><view class="chose on"></view>男</view>
+			<view class="gender"><view class="chose"></view>女</view>
+		</view>
+	</view>
+	<view class="field">
+		<view class="label">出生日期</view>
+		<input type="text" placeholder-class="placeholder" style="width:68%;" placeholder="（例：1990/01／01）" maxlength="10"/>
+	</view>
+	<view class="field">
+		<view class="label">个性签名</view>
+		<input type="text" placeholder-class="placeholder" style="width:68%;" placeholder="（不超过20字）" maxlength="20"/>
+	</view>
+	<view class="confirm">保存</view>
+</view>

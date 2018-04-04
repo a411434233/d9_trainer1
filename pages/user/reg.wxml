@@ -1,0 +1,19 @@
+<view class="contaierBox">
+	<view class="title">绑定手机</view>
+	<view class="inputBox">
+		<image src="../../images/icon_mobile.png" mode="widthFix" />
+		<view class="name">手机号</view>
+		<input placeholder="请输入注册手机号" focus="{{mobileFocus}}" type="number" focus maxlength="11" bindinput="mobileInput"/>
+	</view>
+	<view class="inputBox">
+		<image src="../../images/icon_code.png" mode="widthFix" focus="{{codeFocus}}"/>
+		<view class="name">验证码</view>
+		<input placeholder="请输入短信验证码" type="number" maxlength="6" bindinput="codeInput"/>
+		<view class="getCode {{disable}}" bindtap="sendMsg">{{txt}}</view>
+	</view>
+	<view class="userAgree">
+		<view class="{{agree}}" bindtap="choseAgree"></view>
+		<view class="agree">我已阅读并同意<text bindtap="agree">《用户协议》</text></view>
+	</view>
+	<view class="confirm" bindtap="bindMobile">确认</view>
+</view>

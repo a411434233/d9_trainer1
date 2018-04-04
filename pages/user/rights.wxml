@@ -1,0 +1,25 @@
+<view class="mybox">
+			<view class="userInfo">
+				<view class="userBg">
+					<view class="userBgLeft"></view>
+					<view class="userBgRing"></view>
+						<image src="https://wx.qlogo.cn/mmopen/vi_32/7wNO8Y5CibxYwG1HqqlwkY46zHicA7WHjVej6D8nKEd6zNOR1ic0re2kzdYW8CQMXZicv99V68FfLIna5QIucNt38Q/132" mode="widthFix" class="avatar" />
+						<view class="name">Sivan</view>
+						<view class="rights">您共拥有一份权益</view>
+				</view>
+			</view>
+			<view class="userOwn">
+				<view class="lists">
+					<image src="../../images/icon_vip.png" mode="widthFix" class="icon" />
+					<view class="name">健身会员</view>
+				</view>
+				<view class="lists">
+					<image src="../../images/icon_personalTraining.png" mode="widthFix" class="icon" />
+					<view class="name">私教</view>
+				</view>
+				<view class="lists">
+					<image src="../../images/icon_lesson.png" mode="widthFix" class="icon" />
+					<view class="name">团体课</view>
+				</view>
+			</view>
+</view>			

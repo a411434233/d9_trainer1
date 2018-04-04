@@ -1,0 +1,6 @@
+page{background: #fff;}
+.contaiter{padding: 20px;}
+.cardList{margin-bottom: 20px;}
+.cardList image{width:100%;position:relative;}
+.price{position:absolute;top:13px;right:15px;font-size:22px;color:#fff;}
+.address{position:absolute;bottom:13px;left:15px;font-size:13px;color:#fff;opacity: 0.8}

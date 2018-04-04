@@ -1,0 +1,15 @@
+page{background:#f6f6f6}
+.contaierBox{padding:20px 20px 0px 18px;}
+.avatarBox{height: 60px;line-height: 60px;margin-bottom: 25px;}
+.avatar{float:left;width:60px;height:60px;border-radius:50%;overflow:hidden;margin-right: 12px;float: left;}
+.changeAvatar{font-size: 13px; color: #999999;float:left;}
+.changeAvatar .arrow{display:inline-block;margin-left: 3px;transform:rotate(-45deg); border-bottom:2px solid #999999; border-right:2px solid #999999;width:7px; height:7px; margin-top:10px; margin-right:5px;}
+.field{height: 50px;line-height: 50px;}
+.field .label{font-size: 15px; color: #333333;margin-right: 28px;float: left;}
+.field input{height: 40px;border-bottom: 2px solid #EDEDED;float: left;line-height: 40px;width:78%;margin-top:3px;}
+.confirm{background:#E74747; border-radius:100px; height:44px; line-height:44px; width:90%; margin:auto; text-align:center; color:#fff; font-size:16px; box-shadow:0px 0px 100px 2px rgba(231,71,71,.2); margin-top:70px; position:absolute; bottom:30px;}
+.placeholder{font-size: 15px; color: #B7B7B7;}
+.choseBox{font-size: 14px; color: #333333;width: 78%;text-align: left;}
+.gender{float: left;width: 36%;}
+.chose{width:10px; height:10px; float:left;background: #D6D6D6;border:2px solid #D6D6D6; border-radius:50%; margin-left:3px; margin-right:7px; margin-top:17px;}
+.chose.on{ border:2px solid #FF5656;background: #FF5656;}

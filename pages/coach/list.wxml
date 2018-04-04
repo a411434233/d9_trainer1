@@ -1,0 +1,11 @@
+<view class="list" wx:for="{{coachLish}}" wx:for-item="item" wx:key="key" data-id="{{item.id}}" bindtap="detail">
+	<image class="avatar" src="{{item.avatarUrl}}" mode="widthFix" />
+	<view class="info">
+		<view class="name">{{item.name}}</view>
+		<view class="skill" wx:if="{{item.skilled}}">擅长：{{item.skilled}}</view>
+		<view class="tagList" wx:if="{{item.tagList}}">
+			<view class="tag" wx:for="{{item.tagList}}"  wx:for-item="list" wx:key="tagKey"><image src="../../images/skill.png" mode="widthFix" />{{list}}</view>
+		</view>
+	</view>
+	<!--<view class="price">￥120 起/课时</view>-->
+</view>

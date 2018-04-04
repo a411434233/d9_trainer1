@@ -1,0 +1,13 @@
+<image src="{{type}}" mode="widthFix" class="card">
+	<view class="price">¥ {{price}}</view>
+</image>
+<view class="title">
+	<view class="name">D-NINE 年卡</view>
+	<view class="price">¥ {{price}}</view>
+</view>
+<view class="info">有效期：自购买起{{effect}}有效</view>
+<view class="info">适用范围：D-nine旗舰店</view>
+<view class="tit">{{typeName}}权益</view>
+<view class="info">【全年不打烊】</view>
+<view class="info">7x24小时营业，扫码入场，全自助健身，无限次，无推销。买卡立即生效</view>
+<view class="confirm">前往支付</view>

@@ -1,0 +1,8 @@
+<view class="contaiter">
+	<view class="cardList" wx:for="{{cardList}}" wx:for-item="cardItem" wx:key="key">
+		<image src="https://img.d9.konggeek.com/card/card_{{cardItem.type}}.png" mode="widthFix" data-type="{{cardItem.type}}" data-id="{{cardItem.id}}" data-name="{{cardItem.name}}" data-price="{{cardItem.price}}" bindtap="detail">
+			<view class="price">¥ {{cardItem.price}}</view>
+			<view class="address">适用范围：D-nine旗舰店 </view>
+		</image>
+	</view>
+</view>

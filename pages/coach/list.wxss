@@ -1,0 +1,9 @@
+page{background:#f6f6f6;padding:20px 20px;width:calc(100% - 40px)}
+.list{background: #FFFFFF; box-shadow: 0 13px 13px 0 rgba(0,0,0,0.08); border-radius: 8px;height:85px;width:calc(100% - 30px);background:#fff;margin-bottom:20px;padding:15px;position:relative}
+.list .avatar{float:left;width:50px;overflow:hidden;border-radius:50%;}
+.info{margin-left:8px;float:left}
+.info .name{font-size: 14px; color: #555555;margin-bottom:5px;}
+.info .skill{font-size: 12px; color: #666666;margin-bottom:20px;}
+.tag{float:left;background: #E4EAF3; border-radius: 0.8px;margin-right:15px;height:19px;font-size: 10px; color: #777777;padding-right:6px;}
+.tag image{width:19px;height:19px;background:#b4bfd1;vertical-align:middle;margin-right:6px;}
+.price{font-size: 13px; color: #FF5656;position:absolute;right:15px;}
