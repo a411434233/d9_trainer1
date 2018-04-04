@@ -1,17 +1,27 @@
 .main{padding-left:18px;padding-top:30px;}
 .main .title{font-size: 20px;color: #555555;height:30px;line-height:30px;margin-bottom:10px;}
-page{position:fixed;width:100%;height:100%;top:0px;left:0pz;}
+page{position:fixed;width:100%;height:100%;top:0px;left:0px;}
 .cardBox{background:#1e2237;border-radius:10px;padding:15px;width:calc(100% - 98px);box-shadow:0px 3px 15px 0px rgba(0,0,0,0.5);margin-bottom:30px;overflow:hidden}
 .personalTrainingBox{width:calc(100% - 68px);position:relative;margin-bottom:30px;box-shadow:0px 3px 15px 0px rgba(0,0,0,0.5);border-radius:10px;overflow:hidden}
 .lesson{position:absolute;bottom:10px;right:10px;width:47px;border-radius:10px;overflow:hidden;}
 .activity{box-shadow:0px 3px 15px 0px rgba(0,0,0,0.5);margin-bottom:30px;border-radius:10px;overflow:hidden;width:calc(100% - 68px);}
 .venues{width:calc(100% - 68px);box-shadow:0px 3px 15px 0px rgba(0,0,0,0.5);margin-bottom:30px;border-radius:7px;overflow:hidden;}
-.mybox{width:calc(100% - 68px);margin-bottom:30px}
+.mybox{width:calc(100% - 68px)}
 .userInfo{margin-top:10px;}
 .userBg{width:100%;box-shadow:0px 3px 15px 0px rgba(0,0,0,0.5);border-radius:7px;overflow:hidden;position:relative;}
+.rights{width:100%;background: #FFFFFF; box-shadow:0px 3px 12px 0px rgba(0,0,0,0.1); border-radius: 8px;margin-top:22px;padding:22px 0px;}
+.userOwn{height:65px;}
+.userOwn .lists{float:left;text-align:center;width:33.333%;}
+.userOwn .lists image{width:35%;margin:auto;display:block}
+.userOwn .lists .name{font-size: 14px; color: #555555;}
+.userOwn .lists .txt{font-size: 10px; color: #999999;}
+.allRights{background: #E74747; border-radius: 70px;color:#fff;height:30px;line-height:30px;font-size: 11.2px;text-align:center;clear:both;margin:auto;margin-top:20px;width:90px;}
 .avatar{width:50px;height:50px;position:absolute;left:12px;top:16px;border-radius:50%;}
-.navLists{width:100%;margin-top:30px;}
-.name{font-size: 18px; color: #FFFFFF; text-shadow: 0 1px 1px rgba(0,0,0,0.50);position:absolute;left:72px;top:29px}
+.navLists{width:100%;margin-top:30px;margin-bottom:30px}
+.navLists .nav{height:30px;line-height:30px;margin-bottom:15px;}
+.navLists .nav .name{float:left;font-size: 15px; color: #333333;}
+.navLists .nav .arrow{transform:rotate(-45deg); border-bottom:2px solid #999999; border-right:2px solid #999999; float:right; width:6px; height:6px; margin-top:10px; margin-right:5px;}
+.userInfo .name{font-size: 18px; color: #FFFFFF; text-shadow: 0 1px 1px rgba(0,0,0,0.50);position:absolute;left:72px;top:29px}
 .righeNav{position:fixed;right:0px;top:40px;height:100%;overflow:auto;}
 .righeNav .titBox{font-size: 12px; color: #666666; text-align:right;clear:both}
 .scale{height:2px;margin-bottom:6px;clear:both;float:right;background: #CCCCCC;}
@@ -25,10 +35,11 @@ page{position:fixed;width:100%;height:100%;top:0px;left:0pz;}
 ::-webkit-scrollbar {width: 0;height: 0;color: transparent;}
 .cardBox image{width:100%}
 .cardBox .img{position:relative;padding-bottom:15px;margin-bottom:3px}
+.cardBox .img .price{position:absolute;top:10px;right:10px;font-size:16px;color:#fff}
 .cardBox .img .bottom{width:40px;height:20px;bottom:2px;position:absolute;left:50%;margin-left:-20px;border-radius:0 0 20px 20px;}
 .cardBox .year .bottom{background:#3d48a0;}
 .cardBox .month .bottom{background:#ce9ab2;}
 .cardBox .season .bottom{background:#63b7a9;}
-.cardBox .all .bottom{background:#c9b176;}
+.cardBox .unlimited .bottom{background:#c9b176;}
 .sales{text-align:right;font-size: 12px; color: #FFFFFF;display:block;width:100%;text-align:right;margin-top:4px;}
 .limit{text-align:right;font-size: 10px; color: #FFFFFF;opacity: 0.5;display:block;margin-bottom:15px;margin-top:2px;}

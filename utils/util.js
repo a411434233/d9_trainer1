@@ -39,8 +39,17 @@ function errorMsg(that, data) {
     })
   }, 2000)
 }
-
+function errorCallback() {
+  wx.showLoading({
+    title: '网络异常',
+    mask: true
+  })
+  setTimeout(function () {
+    wx.hideLoading()
+  }, 2000)
+}
 module.exports = {
   formatTime: formatTime,
-  errorMsg:errorMsg
+  errorMsg:errorMsg,
+  errorCallback:errorCallback
 }

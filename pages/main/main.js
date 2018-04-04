@@ -2,7 +2,9 @@ const app = getApp();
 Page({
 	data:({
 		curView:"card",
-		tabView:"card"
+		tabView:"card",
+		user:null,
+		membershipCardList:null
 	}),
 	jump:function (e) {
 		let target = e.currentTarget.dataset.id;
@@ -11,36 +13,81 @@ Page({
 	      tabView:target
 	    })
 	},
-	/*
-	scroll:function(e){
-		let scrollTop = e.detail.scrollTop;
-		let dataCurView = this.data.curView;
-		let curView ='card';
-		let scrollHeight = e.detail.scrollHeight;
-		console.log(scrollHeight);
-		if(scrollTop<scrollHeight/6){
-			curView = 'card'
-		}else if(scrollHeight/5>scrollTop && scrollTop<scrollHeight/6){
-			curView = 'personalTraining'
-		}else if(scrollHeight/4>scrollTop && scrollTop<scrollHeight/5){
-			curView = 'lesson'
-		}else if(scrollHeight/3>scrollTop && scrollTop<scrollHeight/4){
-			curView = 'activity'
-		}else if(scrollHeight/2>scrollTop && scrollTop<scrollHeight/1){
-			curView = 'venues'
-		}else{
-			curView = 'my'
-		}
-		if(dataCurView !=curView){
-			this.setData({
-		      tabView: curView
-		    })
-		}
-	},
-	*/
 	viewIntro:function(){
 		wx.navigateTo({
-	        url: '../index/intro'
-	      })
+	    	url: '../index/intro'
+	    })
+	},
+	cardList:function(){
+		wx.navigateTo({
+	    	url: '../card/list'
+	    })
+	},
+	apply: function() {
+		wx.navigateTo({
+			url: '../apply/apply'
+		})
+	},
+	coach:function(){
+		wx.navigateTo({
+			url: '../coach/list'
+		})
+	},
+	onShow:function(){
+		let that = this;
+		wx.login({
+		    success: res => {
+		        wx.request({
+				    url: app.apiServerURL + "/user/wechatXcxLogin.htm",
+				    data: {
+				        version: app.version,
+				        "code": res.code
+				    },
+				    success: function (res) {
+			            if (res.data.retCode != '0') {
+			              return;
+			            } 
+			            var user = res.data.data.user;
+			            if(user.mobileNo==""|| user.mobileNo==undefined){
+			            	wx.navigateTo({
+						    	url: '../user/reg'
+						    })
+			            }
+			            var accessToken = user.accessToken;
+			            wx.setStorageSync('accessToken', accessToken);
+			            that.setData({
+			              user: user
+			            })
+			            app.requestAndUpdateUserInfo();   
+			            wx.request({
+						      url: app.apiServerURL + "/index/index.htm",
+						      data: {accessToken:wx.getStorageSync("accessToken")},
+						      success: function (res) {
+						      	if (res.data.retCode == '0') {
+							        console.log(res.data.data)
+							        that.setData({
+							        	membershipCardList:res.data.data.membershipCardList
+							        })
+							    }else {
+						            wx.showToast({
+								        title: res.data.errorMsg,
+								        icon: 'none',
+								    	duration: 2000
+								    })
+						        }
+						      },
+							  fail: function () {
+								util.errorCallback();
+							  } 
+						    })     
+			          }
+				})
+			},
+	        fail: function (res){
+		        wx.showToast({
+		          title: '登录小程序失败',
+		        })
+		    }
+		})
 	}
 })

@@ -1,7 +1,7 @@
 App({
   "version": "1.0",
   "apiServerURL": "https://api.d9.konggeek.com",
-  // "apiServerURL": "http://local.konggeek.com:8080/d9gym/api",
+  //"apiServerURL": "http://local.konggeek.com:8080/d9gym/api",
   onLaunch: function (options) {
     console.log("app onLaunch")
     // 展示本地存储能力
