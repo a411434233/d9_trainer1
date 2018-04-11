@@ -40,7 +40,7 @@ Page({
 		params.accessToken =  wx.getStorageSync("accessToken");
 		if(this.data.mobile==""){
 			wx.showToast({
-		        title: '请输入号码',
+		        title: '请输入手机号码',
 		        icon: 'none',
 		    	duration: 2000
 		    })

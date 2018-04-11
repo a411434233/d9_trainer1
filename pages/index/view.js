@@ -19,6 +19,7 @@ Page({
 	     	'https://img.d9.konggeek.com/intro/15.jpg'
 	     ]
 	},  
+	"enablePullDownRefresh": false,
 	imgZoom: function(event) {
 		var that = this;
 		var imgList = that.data.goodsPictureList; //获取data-list

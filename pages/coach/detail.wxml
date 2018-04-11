@@ -7,14 +7,13 @@
 <view style="height:55px;width:100%;"  id="info" name="info"></view>
 <view>
 <view class="infoBox">
-	<image src="https://wx.qlogo.cn/mmopen/vi_32/7wNO8Y5CibxYwG1HqqlwkY46zHicA7WHjVej6D8nKEd6zNOR1ic0re2kzdYW8CQMXZicv99V68FfLIna5QIucNt38Q/132" mode="widthFix" class="avatar" />
+	<image src="{{coach.avatarUrl}}" mode="widthFix" class="avatar" />
 	<view class="info">
-		<view class="name">Jose Chavez</view>
-		<view class="price">￥120 起/课时</view>
-		<view class="skill">擅长：增肌、减脂、塑形</view>
+		<view class="name">{{coach.name}}</view>
+		<view class="price"></view>
+		<view class="skill">擅长：{{coach.skilled}}</view>
 		<view class="tagList">
-			<view class="tag"><image src="../../images/skill.png" mode="widthFix" />健身达人</view>
-			<view class="tag"><image src="../../images/skill.png" mode="widthFix" />秀肌狂魔</view>
+			<view class="tag" wx:for="{{coach.tagList}}"  wx:for-item="list" wx:key="tagKey"><image src="../../images/skill.png" mode="widthFix" />{{list}}</view>
 		</view>
 	</view>
 </view>
@@ -22,8 +21,9 @@
 	<view class="title">自我介绍</view>
 </view>
 <view class="introCon">
-	增肌塑形，菩提拉，体态矫正，功能性减脂#北美协会教练资格认证#美国南加大21种疼痛师认证#国家职业教练资格认证
+{{coach.signature}}
 </view>
+<!--
 <view class="line"></view>
 <view class="titleBox" style="margin-top:20px;">
 	<view class="title">可约时间</view>
@@ -34,6 +34,7 @@
 	<view class="time">14:00</view>
 	<view style="clear:both;width:100%;height:1px;"></view>
 </view>
+-->	
 <view class="line"></view>
 </view>
 <view id="lesson" name="lesson">
@@ -41,40 +42,13 @@
 		<view class="title">教授课程</view>
 	</view>
 	<view class="lessonList">
-		<view class="lesson">
-			<image src="https://img.d9.konggeek.com/lesson/lesson.png" mode="widthFix" />
-			<view class="name">体验课程</view>
-			<view class="intro">针对身体情况给出全面建议...</view>
+		<view class="lesson" wx:for="{{courseList}}" wx:for-item="list" wx:key="tagKey">
+			<image src="{{list.pictures}}" mode="widthFix" bindtap="goLesson"  data-id="{{list.id}}"  data-coachId="{{coach.id}}"/>
+			<view class="name" bindtap="goLesson" data-id="{{list.id}}"  data-coachId="{{coach.id}}">{{list.title}}</view>
+			<view class="intro" bindtap="goLesson" data-id="{{list.id}}"  data-coachId="{{coach.id}}">{{list.subtitle}}</view>
 			<view class="priceBox">
-				<view class="price">￥120 <text>起/课时</text></view>
-				<view class="buyBtn">购买</view>
-			</view>
-		</view>
-		<view class="lesson">
-			<image src="https://img.d9.konggeek.com/lesson/lesson.png" mode="widthFix" />
-			<view class="name">体验课程</view>
-			<view class="intro">针对身体情况给出全面建议...</view>
-			<view class="priceBox">
-				<view class="price">￥120 <text>起/课时</text></view>
-				<view class="buyBtn">购买</view>
-			</view>
-		</view>
-		<view class="lesson">
-			<image src="https://img.d9.konggeek.com/lesson/lesson.png" mode="widthFix" />
-			<view class="name">体验课程</view>
-			<view class="intro">针对身体情况给出全面建议...</view>
-			<view class="priceBox">
-				<view class="price">￥120 <text>起/课时</text></view>
-				<view class="buyBtn">购买</view>
-			</view>
-		</view>
-		<view class="lesson">
-			<image src="https://img.d9.konggeek.com/lesson/lesson.png" mode="widthFix" />
-			<view class="name">体验课程</view>
-			<view class="intro">针对身体情况给出全面建议...</view>
-			<view class="priceBox">
-				<view class="price">￥120 <text>起/课时</text></view>
-				<view class="buyBtn">购买</view>
+				<view class="price">￥{{list.price}} <text>起/课时</text></view>
+				<view class="buyBtn" data-id="{{list.id}}" bindtap="buy" data-coachid="{{coach.id}}">购买</view>
 			</view>
 		</view>
 		<view style="clear:both;width:100%;height:1px;"></view>
@@ -84,47 +58,33 @@
 <view id="comment" name="comment">
 	<view class="titleBox" style="margin-top:20px">
 		<view class="title">学员评价</view>
-		<view class="more">全部</view>
+		<view class="more" bindtap="goComment" data-id="{{coach.id}}">全部</view>
 	</view>
 	<view class="commentList">
-		<view class="list">
-			<image src="https://wx.qlogo.cn/mmopen/vi_32/7wNO8Y5CibxYwG1HqqlwkY46zHicA7WHjVej6D8nKEd6zNOR1ic0re2kzdYW8CQMXZicv99V68FfLIna5QIucNt38Q/132" mode="widthFix" class="avatar" />
+		<view class="list" wx:for="{{coachCommentList}}" wx:for-item="list" wx:key="tagKey" data-id="{{list.id}}">
+			<image src="{{list.avatarUrl}}" mode="widthFix" class="avatar" />
 			<view class="detail">
-				<view class="name">Joseeh</view>
+				<view class="name">{{list.username}}</view>
 				<view class="starList">
-					<view class="star"></view>
-					<view class="star"></view>
-					<view class="star"></view>
+					<block wx:if="{{list.score==5}}">
+						<view class="star"></view><view class="star"></view><view class="star"></view><view class="star"></view><view class="star"></view>
+					</block>
+					<block wx:if="{{list.score==4}}">
+						<view class="star"></view><view class="star"></view><view class="star"></view><view class="star"></view><view class="star gray"></view>
+					</block>
+					<block wx:if="{{list.score==3}}">
+						<view class="star"></view><view class="star"></view><view class="star"></view><view class="star gray"></view><view class="star gray"></view>
+					</block>
+					<block wx:if="{{list.score==2}}">
+						<view class="star"></view><view class="star"></view><view class="star gray"></view><view class="star gray"></view><view class="star gray"></view>
+					</block>
+					<block wx:if="{{list.score==1}}">
+						<view class="star"></view><view class="star gray"></view><view class="star gray"></view><view class="star gray"></view><view class="star gray"></view>
+					</block>
 				</view>
-				<view class="content">瘦了十斤，好评，下次胖了再来！</view>
+				<view class="content">{{list.content}}</view>
 			</view>
-			<view class="commentTime">01-20 19:30</view>
-		</view>
-		<view class="list">
-			<image src="https://wx.qlogo.cn/mmopen/vi_32/7wNO8Y5CibxYwG1HqqlwkY46zHicA7WHjVej6D8nKEd6zNOR1ic0re2kzdYW8CQMXZicv99V68FfLIna5QIucNt38Q/132" mode="widthFix" class="avatar" />
-			<view class="detail">
-				<view class="name">Joseeh</view>
-				<view class="starList">
-					<view class="star"></view>
-					<view class="star"></view>
-					<view class="star"></view>
-				</view>
-				<view class="content">瘦了十斤，好评，下次胖了再来！</view>
-			</view>
-			<view class="commentTime">01-20 19:30</view>
-		</view>
-		<view class="list">
-			<image src="https://wx.qlogo.cn/mmopen/vi_32/7wNO8Y5CibxYwG1HqqlwkY46zHicA7WHjVej6D8nKEd6zNOR1ic0re2kzdYW8CQMXZicv99V68FfLIna5QIucNt38Q/132" mode="widthFix" class="avatar" />
-			<view class="detail">
-				<view class="name">Joseeh</view>
-				<view class="starList">
-					<view class="star"></view>
-					<view class="star"></view>
-					<view class="star"></view>
-				</view>
-				<view class="content">瘦了十斤，好评，下次胖了再来！</view>
-			</view>
-			<view class="commentTime">01-20 19:30</view>
+			<view class="commentTime">{{list.time}}</view>
 		</view>
 	</view>
 </view>

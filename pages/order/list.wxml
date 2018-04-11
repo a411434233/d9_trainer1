@@ -1,0 +1,13 @@
+<view class="listBox" wx:for="{{orderList}}" wx:for-item="item" wx:key="key" data-sn="{{item.orderSn}}" bindtap="detail">
+	<view class="info">
+		<image class="coursePicture" src="{{item.coursePicture}}" />
+		<view class="courseInfo">
+			<view class="courseName">{{item.courseTitle}}</view>
+			<view class="coachName">{{item.coachName}}</view>
+			<view class="arrow"></view>
+		</view>
+	</view>
+	<view class="time">{{item.time}}  中天MCC店 维多利亚教室</view>
+	<view class="amount"><image src="../../images/ticket.png" mode="widthFix"/>X{{item.amount}}</view>
+	<view class="totalPrice">总计：<text>{{item.paidPrice}}元</text></view>
+</view>

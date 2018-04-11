@@ -1,26 +1,28 @@
 <view class="contaierBox">
 	<view class="avatarBox">
-		<image src="https://wx.qlogo.cn/mmopen/vi_32/7wNO8Y5CibxYwG1HqqlwkY46zHicA7WHjVej6D8nKEd6zNOR1ic0re2kzdYW8CQMXZicv99V68FfLIna5QIucNt38Q/132" mode="widthFix" class="avatar" />
-		<view class="changeAvatar">设置头像<view class="arrow"></view></view>
+		<image src="{{user.avatarUrl}}" mode="widthFix" class="avatar" />
+		<view class="changeAvatar" bindtap="upload">设置头像<view class="arrow"></view></view>
 	</view>
 	<view class="field">
 		<view class="label">昵称</view>
-		<input type="text" placeholder-class="placeholder" placeholder="请输入昵称" maxlength="20"/>
+		<input type="text" bindinput="nameInput" placeholder-class="placeholder" value="{{user.nickName}}" placeholder="请输入昵称" maxlength="20"/>
 	</view>
 	<view class="field">
 		<view class="label">性别</view>
 		<view class="choseBox">
-			<view class="gender"><view class="chose on"></view>男</view>
-			<view class="gender"><view class="chose"></view>女</view>
+			<view class="gender"><view class="chose {{user.gender=='male'?'on':''}}" bindtap="choseGender" data-type="male"></view>男</view>
+			<view class="gender"><view class="chose {{user.gender=='female'?'on':''}}" bindtap="choseGender" data-type="female"></view>女</view>
 		</view>
 	</view>
 	<view class="field">
 		<view class="label">出生日期</view>
-		<input type="text" placeholder-class="placeholder" style="width:68%;" placeholder="（例：1990/01／01）" maxlength="10"/>
+		 <picker mode="date" style="width:calc(100% - 94px); float:right; height:40px;position:absolute;z-index:111;right:0;top:0" value="{{user.birthday}}" start="1935-01-01" end="2018-12-31" bindchange="bindDateChange"> 
+			<input disabled="true" type="text" placeholder-class="placeholder" style="width:100%;" value="{{user.birthday}}" placeholder="（例：1990/01／01）" maxlength="10"/>
+		 </picker> 
 	</view>
 	<view class="field">
 		<view class="label">个性签名</view>
-		<input type="text" placeholder-class="placeholder" style="width:68%;" placeholder="（不超过20字）" maxlength="20"/>
+		<input type="text" bindinput="signInput" placeholder-class="placeholder" style="width:68%;" value="{{user.signature}}" placeholder="（不超过20字）" maxlength="20"/>
 	</view>
-	<view class="confirm">保存</view>
+	<view class="confirm" bindtap="submit">保存</view>
 </view>

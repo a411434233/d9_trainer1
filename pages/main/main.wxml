@@ -6,15 +6,14 @@
 				<view class="bottom"></view>
 				<view class="price">¥ {{item.price}}</view>
 			</image>
-			<text class="sales">10月1日开售,终身卡限购500名</text>
-			<text class="limit">*活动日期仅限2018.02.01 至 04.30</text>
+			<text class="sales">4月15日开售,终身卡限购500名</text>
+			<text class="limit">*活动日期仅限2018.04.15 至 04.30</text>
 		</view>
 		<image src="https://img.d9.konggeek.com/card/allPhotocard.png" bindtap="apply" mode="widthFix" style="width:calc(100% - 68px);margin-top:-10px;"/>
 		<view class="title" id="personalTraining">私教</view>
 		<image class="personalTrainingBox" src="../../images/personalTraining.png" mode="widthFix" bindtap="coach">
 			<image class="lesson" mode="widthFix" src="../../images/lesson.png"/>
 		</image>
-		<block wx:if="{{lessonList}}">
 		<view class="title" id="lesson">本日操课</view>
 		<view class="listBox" wx:for="{{lessonList}}" wx:key="key" wx:for-item="item" wx:for-index="index">
 			<image src="{{item.banner}}">
@@ -27,8 +26,10 @@
 				</view>
 			</image>
 		</view>
-		<view class="viewLesson">查看本周课程</view>
-		</block>
+		<view class="empty" wx:if="{{!lessonList}}">
+			暂无本日操课
+		</view>
+		<view class="viewLesson" bindtap="lesson">查看本周课程</view>
 		<!--<view class="title" id="activity">活动</view>
 		<image class="activity" src="../../images/personalTraining.png" mode="widthFix">
 			<view class="time">
@@ -40,7 +41,7 @@
 		</image>
 		<view class="title" id="my">我的</view>
 		<view class="mybox">
-			<view class="userInfo">
+			<view class="userInfo"  bindtap="setting">
 				<image src="../../images/user_bg.png" mode="widthFix" class="userBg">
 					<image src="{{user.avatarUrl}}" mode="widthFix" class="avatar" />
 					<view class="name">{{user.nickName}}</view>
@@ -63,24 +64,33 @@
 				</view>
 			</view>
 			<view class="navLists">
-				<view class="nav">
-					<view class="name" bindtap="lesson">课程</view>
+				<view class="nav" id="myLesson" bindtap="lesson">
+					<view class="name">课程</view>
 					<view class="arrow"></view>
 				</view>
-				<view class="nav">
-					<view class="name" bindtap="order">订单</view>
-					<view class="arrow"></view>
+				<view class="nav" id="order" bindtap="order">
+					<view class="name">订单</view>
+					<view class="more">全部</view>
+				</view>
+				<view class="listBox" wx:for="{{orderList}}" wx:for-item="item" wx:key="key" data-sn="{{item.orderSn}}" bindtap="detail">
+					<view class="info">
+						<image class="coursePicture" src="{{item.coursePicture}}" />
+						<view class="courseInfo">
+							<view class="courseName">{{item.courseTitle}}</view>
+							<view class="coachName">{{item.coachName}}</view>
+							<view class="arrow"></view>
+						</view>
+					</view>
+					<view class="time">{{item.time}}  中天MCC店 维多利亚教室</view>
+					<view class="amount"><image src="../../images/ticket.png" mode="widthFix"/>X{{item.amount}}</view>
+					<view class="totalPrice">总计：<text>{{item.paidPrice}}元</text></view>
 				</view>
 				<view class="nav">
 					<view class="name" bindtap="customer">联系客服</view>
 					<view class="arrow"></view>
 				</view>
-				<view class="nav">
-					<view class="name" bindtap="cooperation">我要合作</view>
-					<view class="arrow"></view>
-				</view>
-				<view class="nav">
-					<view class="name" bindtap="setting">设置</view>
+				<view class="nav" bindtap="setting">
+					<view class="name">设置</view>
 					<view class="arrow"></view>
 				</view>
 			</view>
@@ -177,5 +187,43 @@
 		<view class="scale" style="width:18px"></view>
 		<view class="scale" style="width:16px"></view>
 		<view class="scale" style="width:20px"></view>
+	</view>
+	<view class="titBox  myLesson_{{tabView}}">
+		<view class="tit"  bindtap="jump" data-id="myLesson">约课</view>
+		<view class="lineBox">
+			<view class="scale" style="width:27px"></view>
+			<view class="scale" style="width:26px"></view>
+			<view class="scale" style="width:36px"></view>
+		</view>
+	</view>
+	<view class="lineBox"  bindtap="jump" data-id="my">
+		<view class="scale" style="width:20px"></view>
+		<view class="scale" style="width:18px"></view>
+		<view class="scale" style="width:16px"></view>
+		<view class="scale" style="width:20px"></view>
+	</view>
+	<view class="titBox  order_{{tabView}}">
+		<view class="tit"  bindtap="jump" data-id="order">订单</view>
+		<view class="lineBox">
+			<view class="scale" style="width:27px"></view>
+			<view class="scale" style="width:26px"></view>
+			<view class="scale" style="width:36px"></view>
+		</view>
+	</view>
+	<view class="lineBox"  bindtap="jump" data-id="my">
+		<view class="scale" style="width:22px"></view>
+		<view class="scale" style="width:20px"></view>
+		<view class="scale" style="width:18px"></view>
+		<view class="scale" style="width:26px"></view>
+		<view class="scale" style="width:20px"></view>
+	</view>
+	<view class="lineBox" style="clear:both">
+		<image src="../../images/qrcode.png" mode="widthFix" style="width:45px;float:right;margin-top:13px" bindtap="openQrcode"/>
+	</view>
+</view>
+<view class="shadow {{openQrcode}}">
+	<image src="{{qrcode}}" mode="widthFix" style="width:calc(100% - 144px);margin:130px 72px;margin-bottom:25px" />
+	<view class="closeBox" bindtap="closeQrcode">
+		<view class="close"></view>
 	</view>
 </view>

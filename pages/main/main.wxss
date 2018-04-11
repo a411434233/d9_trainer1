@@ -15,6 +15,7 @@ page{position:fixed;width:100%;height:100%;top:0px;left:0px;}
 .userOwn .lists image{width:35%;margin:auto;display:block}
 .userOwn .lists .name{font-size: 14px; color: #555555;}
 .userOwn .lists .txt{font-size: 10px; color: #999999;}
+.empty{height:150px; width:calc(100% - 72px); border:2px dotted #eee; border-radius:10px; line-height:150px; text-align:center; font-size:14px; color:#ccc; margin-bottom:20px;}
 .allRights{background: #E74747; border-radius: 70px;color:#fff;height:30px;line-height:30px;font-size: 11.2px;text-align:center;clear:both;margin:auto;margin-top:20px;width:90px;}
 .avatar{width:50px;height:50px;position:absolute;left:12px;top:16px;border-radius:50%;}
 .navLists{width:100%;margin-top:30px;margin-bottom:30px}
@@ -27,10 +28,11 @@ page{position:fixed;width:100%;height:100%;top:0px;left:0px;}
 .scale{height:2px;margin-bottom:6px;clear:both;float:right;background: #CCCCCC;}
 .titBox .tit{float:right;height:20px;line-height:20px;margin-right:3px;}
 .titBox .lineBox{float:right;width:0px;overflow:hidden}
-.titBox.boxCard_card .lineBox,.titBox.personal_personalTraining .lineBox,.titBox.lesson_lesson .lineBox,.titBox.activity_activity .lineBox,.titBox.venues_venues .lineBox,.titBox.my_my .lineBox{width:auto;}
-.titBox.boxCard_card .tit,.titBox.personal_personalTraining .tit,.titBox.lesson_lesson .tit,.titBox.activity_activity .tit,.titBox.venues_venues .tit,.titBox.my_my .tit{color:#ED3839;float:left}
-.titBox.boxCard_card .scale,.titBox.personal_personalTraining .scale,.titBox.lesson_lesson .scale,.titBox.activity_activity .scale,.titBox.venues_venues .scale,.titBox.my_my .scale{background: #ED3839;}
+.titBox.boxCard_card .lineBox,.titBox.personal_personalTraining .lineBox, .titBox.myLesson_myLesson .lineBox, .titBox.order_order .lineBox,.titBox.lesson_lesson .lineBox,.titBox.activity_activity .lineBox,.titBox.venues_venues .lineBox,.titBox.my_my .lineBox{width:auto;}
+.titBox.boxCard_card .tit,.titBox.personal_personalTraining .tit,.titBox.lesson_lesson .tit,.titBox.activity_activity .tit,.titBox.venues_venues .tit,.titBox.my_my .tit,.titBox.myLesson_myLesson .tit,.titBox.order_order .tit{color:#ED3839;float:left}
+.titBox.boxCard_card .scale,.titBox.personal_personalTraining .scale,.titBox.lesson_lesson .scale,.titBox.order_order .scale,.titBox.myLesson_myLesson .scale,.titBox.activity_activity .scale,.titBox.venues_venues .scale,.titBox.my_my .scale{background: #ED3839;}
 .activity{position:relative}
+.viewLesson{border:2px solid #555555; border-radius:100px; width:calc(100% - 78px); height:43px; font-size:14px; color:#555555; line-height:43px; text-align:center; margin-bottom:30px;}
 .activity .time{font-size: 10px; color: #fff; line-height:14px;position:absolute;bottom:10px;left:22px;opacity:0.5}
 ::-webkit-scrollbar {width: 0;height: 0;color: transparent;}
 .cardBox image{width:100%}
@@ -43,3 +45,21 @@ page{position:fixed;width:100%;height:100%;top:0px;left:0px;}
 .cardBox .unlimited .bottom{background:#c9b176;}
 .sales{text-align:right;font-size: 12px; color: #FFFFFF;display:block;width:100%;text-align:right;margin-top:4px;}
 .limit{text-align:right;font-size: 10px; color: #FFFFFF;opacity: 0.5;display:block;margin-bottom:15px;margin-top:2px;}
+.closeBox{border: 2px solid #FFFFFF;width:30px;height:30px;border-radius:50%;display:block;margin:auto;text-align:center}
+.close{ position:relative; top:3px;width:2px; height:15px; background: #fff; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -o-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); display: inline-block; } 
+.close:after{ content: ""; position: absolute; top: 0; left: 0; width:2px; height:15px; background: #fff; -webkit-transform: rotate(270deg); -moz-transform: rotate(270deg); -o-transform: rotate(270deg); -ms-transform: rotate(270deg); transform: rotate(270deg); }
+.shadow{background:rgba(0,0,0,0.7);position:fixed;z-index:100;left:0;top:0;width:100%;height:100%;display:none}
+.shadow.true{display:block;}
+.listBox{background:#fff; margin-bottom:25px; padding:20px; box-shadow:0px 2px 30px 0px rgba(0,0,0,0.1); border-radius:7px;}
+.info{height:100px}
+.more{color:#E74747;float:right;font-size:14px}
+.coursePicture{float:left;width:120px;margin-right:15px;height:100px}
+.courseInfo{float:left;position:relative;width:calc(100% - 135px)}
+.courseName{font-size:16px;color:#333333;margin-top:25px;margin-bottom:5px;}
+.coachName{font-size: 13px; color: #777777;margin-bottom:10px}
+.listBox .arrow{transform:rotate(-45deg); border-bottom:2px solid #999999; border-right:2px solid #999999; position:absolute; width:6px; height:6px; top:47px; right:10px;}
+.time{font-size: 13px; color: #999999;height:30px;line-height:30px;}
+.amount{font-size: 14px; color: #333333;height:25px;line-height:25px;}
+.amount image{float:left;width:32px;margin-right:5px;margin-top:2px;}
+.totalPrice{font-size: 13px; color: #E74747;margin-top:3px;margin-bottom:-10px;}
+.totalPrice text{font-size: 18px;}
