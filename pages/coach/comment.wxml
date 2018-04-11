@@ -1,0 +1,32 @@
+<view id="comment" name="comment">
+	<view class="titleBox" style="margin-top:20px">
+		<view class="title">学员评价</view>
+	</view>
+	<view class="commentList">
+		<view class="list" wx:for="{{coachCommentList}}" wx:for-item="list" wx:key="tagKey" data-id="{{list.id}}">
+			<image src="{{list.avatarUrl}}" mode="widthFix" class="avatar" />
+			<view class="detail">
+				<view class="name">{{list.username}}</view>
+				<view class="starList">
+					<block wx:if="{{list.score==5}}">
+						<view class="star"></view><view class="star"></view><view class="star"></view><view class="star"></view><view class="star"></view>
+					</block>
+					<block wx:if="{{list.score==4}}">
+						<view class="star"></view><view class="star"></view><view class="star"></view><view class="star"></view><view class="star gray"></view>
+					</block>
+					<block wx:if="{{list.score==3}}">
+						<view class="star"></view><view class="star"></view><view class="star"></view><view class="star gray"></view><view class="star gray"></view>
+					</block>
+					<block wx:if="{{list.score==2}}">
+						<view class="star"></view><view class="star"></view><view class="star gray"></view><view class="star gray"></view><view class="star gray"></view>
+					</block>
+					<block wx:if="{{list.score==1}}">
+						<view class="star"></view><view class="star gray"></view><view class="star gray"></view><view class="star gray"></view><view class="star gray"></view>
+					</block>
+				</view>
+				<view class="content">{{list.content}}</view>
+			</view>
+			<view class="commentTime">{{list.time}}</view>
+		</view>
+	</view>
+</view>
