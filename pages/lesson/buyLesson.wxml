@@ -1,0 +1,21 @@
+<view class="container">
+	<view class="title">选择课程</view>
+	<view class="info">
+		<image src="{{course.pictures}}" />
+		<view class="courseInfo">
+			<view class="courseName">{{course.title}}</view>
+			<view class="coachName">{{coach.name}}</view>
+			<view class="price"><text>￥{{price}}</text>/课时</view>
+		</view>
+	</view>
+	<view class="numberBox">
+		<view class="tit">私教券张数</view>
+		<view class="choseBox">
+			<view class="btn" bindtap="sub">-</view>
+			<input type="number" maxlength="3" value="{{number}}" bindinput="numberInput"/>
+			<view class="btn" bindtap="add">+</view>
+		</view>
+	</view>
+	<view class="title" style="margin-top:35px;">总计<view class="totalPrice">{{totalPrice}}元</view></view>
+	<view class="confirm" bindtap="confirm">去支付</view>
+</view>
